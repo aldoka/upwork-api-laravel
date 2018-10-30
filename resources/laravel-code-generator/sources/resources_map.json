@@ -13,5 +13,10 @@
         "model-name": "DetailedJob",
         "resource-file": "detailed_jobs.json",
         "table-name": "detailed_jobs"
+    },
+    {
+        "model-name": "DetailedJobBuyer",
+        "resource-file": "detailed_job_buyers.json",
+        "table-name": "detailed_job_buyers"
     }
 ]

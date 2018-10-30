@@ -79,3 +79,67 @@ Route::group(
          ->where('id', '[0-9]+');
 
 });
+
+    Route::group(
+    [
+        'prefix' => 'detailed_jobs',
+    ], function () {
+
+        Route::get('/', 'DetailedJobsController@index')
+             ->name('detailed_jobs.detailed_job.index');
+
+        Route::get('/create','DetailedJobsController@create')
+             ->name('detailed_jobs.detailed_job.create');
+
+        Route::get('/show/{detailedJob}','DetailedJobsController@show')
+             ->name('detailed_jobs.detailed_job.show')
+             ->where('id', '[0-9]+');
+
+        Route::get('/{detailedJob}/edit','DetailedJobsController@edit')
+             ->name('detailed_jobs.detailed_job.edit')
+             ->where('id', '[0-9]+');
+
+        Route::post('/', 'DetailedJobsController@store')
+             ->name('detailed_jobs.detailed_job.store');
+
+        Route::put('detailed_job/{detailedJob}', 'DetailedJobsController@update')
+             ->name('detailed_jobs.detailed_job.update')
+             ->where('id', '[0-9]+');
+
+        Route::delete('/detailed_job/{detailedJob}','DetailedJobsController@destroy')
+             ->name('detailed_jobs.detailed_job.destroy')
+             ->where('id', '[0-9]+');
+
+    });
+
+Route::group(
+[
+    'prefix' => 'detailed_job_buyers',
+], function () {
+
+    Route::get('/', 'DetailedJobBuyersController@index')
+         ->name('detailed_job_buyers.detailed_job_buyer.index');
+
+    Route::get('/create','DetailedJobBuyersController@create')
+         ->name('detailed_job_buyers.detailed_job_buyer.create');
+
+    Route::get('/show/{detailedJobBuyer}','DetailedJobBuyersController@show')
+         ->name('detailed_job_buyers.detailed_job_buyer.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{detailedJobBuyer}/edit','DetailedJobBuyersController@edit')
+         ->name('detailed_job_buyers.detailed_job_buyer.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'DetailedJobBuyersController@store')
+         ->name('detailed_job_buyers.detailed_job_buyer.store');
+               
+    Route::put('detailed_job_buyer/{detailedJobBuyer}', 'DetailedJobBuyersController@update')
+         ->name('detailed_job_buyers.detailed_job_buyer.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/detailed_job_buyer/{detailedJobBuyer}','DetailedJobBuyersController@destroy')
+         ->name('detailed_job_buyers.detailed_job_buyer.destroy')
+         ->where('id', '[0-9]+');
+
+});

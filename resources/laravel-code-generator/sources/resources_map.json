@@ -1,0 +1,17 @@
+[
+    {
+        "model-name": "JobClients",
+        "resource-file": "job_clients.json",
+        "table-name": "job_clients"
+    },
+    {
+        "model-name": "Job",
+        "resource-file": "jobs.json",
+        "table-name": "jobs"
+    },
+    {
+        "model-name": "DetailedJob",
+        "resource-file": "detailed_jobs.json",
+        "table-name": "detailed_jobs"
+    }
+]
